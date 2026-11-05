@@ -1,0 +1,16 @@
+{
+  "asAt": "Monday 26 October 2026, 08:00",
+  "prices": { "Home 30": "₦25,000", "Home 50": "₦35,000", "Business 100": "₦65,000" },
+  "customers": [
+    { "id": "C01", "name": "Adebayo Bello", "phone": "0803 555 0101", "email": "adebayo.bello@mailbox.example", "address": "14 Adeniran Ogunsanya St, Surulere", "plan": "Home 30", "status": "Inactive", "renewal": "25 Nov 2026", "account": "HB10231", "avatar": "c01.svg", "business": false },
+    { "id": "C02", "name": "Ngozi Eze", "phone": "0805 555 0102", "email": "ngozi.eze@mailbox.example", "address": "7 Allen Ave, Ikeja", "plan": "Home 30", "status": "Active", "renewal": "3 Nov 2026", "account": "HB10232", "avatar": "c02.svg", "business": false },
+    { "id": "C03", "name": "Sade Williams", "phone": "0807 555 0103", "email": "sade.williams@mailbox.example", "address": "21 Admiralty Way, Lekki", "plan": "Home 50", "status": "Inactive", "renewal": "28 Oct 2026", "account": "HB10233", "avatar": "c03.svg", "business": false },
+    { "id": "C04", "name": "Tunde Salako", "phone": "0802 555 0104", "email": "tunde.salako@mailbox.example", "address": "5 Isaac John St, Yaba", "plan": "Home 30", "status": "Inactive", "renewal": "27 Oct 2026", "account": "HB10234", "avatar": "c04.svg", "business": false },
+    { "id": "C05", "name": "Chioma Obi", "phone": "0809 555 0105", "email": "chioma.obi@mailbox.example", "address": "32 Opebi Rd, Ikeja", "plan": "Home 30", "status": "Active", "renewal": "12 Nov 2026", "account": "HB10235", "avatar": "c05.svg", "business": false },
+    { "id": "C06", "name": "Adeola Bello", "phone": "0806 555 0106", "email": "adeola.bello@mailbox.example", "address": "3 Ligali Ayorinde St, Victoria Island", "plan": "Home 50", "status": "Inactive", "renewal": "26 Oct 2026", "account": "HB10236", "avatar": "c06.svg", "business": false },
+    { "id": "C07", "name": "Emeka Johnson", "phone": "0804 555 0107", "email": "emeka@johnsonprint.example", "address": "Johnson Print Works, 18 Awolowo Rd, Ikoyi", "plan": "Business 100", "status": "Active", "renewal": "30 Nov 2026", "account": "HB10237", "avatar": "c07.svg", "business": true },
+    { "id": "C08", "name": "Fatima Yusuf", "phone": "0813 555 0108", "email": "fatima.yusuf@mailbox.example", "address": "12 Palm Grove, Maryland", "plan": "Home 30", "status": "Active", "renewal": "9 Nov 2026", "account": "HB10238", "avatar": "c08.svg", "business": false },
+    { "id": "C09", "name": "Kunle Adeyemi", "phone": "0810 555 0109", "email": "kunle.adeyemi@mailbox.example", "address": "6 Bode Thomas St, Surulere", "plan": "Home 50", "status": "Active", "renewal": "15 Nov 2026", "account": "HB10239", "avatar": "c09.svg", "business": false },
+    { "id": "C10", "name": "Hadiza Musa", "phone": "0812 555 0110", "email": "hadiza.musa@mailbox.example", "address": "22 Greenview Estate, Ogba", "plan": "Home 30", "status": "Active", "renewal": "20 Nov 2026", "account": "HB10240", "avatar": "c10.svg", "business": false }
+  ]
+}

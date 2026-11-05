@@ -1,0 +1,413 @@
+{
+  "keyVersion": "w8-2026-10-25-v1",
+  "seed": 261026,
+  "ticketMarks": {
+    "requester": 1,
+    "status": 1,
+    "statusAlternate": 0.5,
+    "priority": 1,
+    "priorityOneAway": 0.5,
+    "sla": 0.5,
+    "slaMatchesChosenPriority": 0.25,
+    "tags": 0.5,
+    "tagsOneOff": 0.25,
+    "finding": [0.5, 0.25, 0, 0],
+    "action": [0.25, 0.1, 0, 0],
+    "ownerTime": [0.25, 0.15, 0.1, 0]
+  },
+  "articleMarks": {
+    "tickets": 2,
+    "ticketsOneOff": 1,
+    "dropdownFull": 2,
+    "dropdownPart": 1,
+    "stepCorrect": 1,
+    "stepAdjacent": 0.5,
+    "leaveOut": 2,
+    "leaveOutOneError": 1
+  },
+  "sla": {
+    "1": { "arrival": "08:10", "P1": "Mon 08:25", "P2": "Mon 09:10", "P3": "Mon 12:10", "P4": "Tue 08:10" },
+    "2": { "arrival": "08:20", "P1": "Mon 08:35", "P2": "Mon 09:20", "P3": "Mon 12:20", "P4": "Tue 08:20" },
+    "3": { "arrival": "08:35", "P1": "Mon 08:50", "P2": "Mon 09:35", "P3": "Mon 12:35", "P4": "Tue 08:35" },
+    "4": { "arrival": "09:05", "P1": "Mon 09:20", "P2": "Mon 10:05", "P3": "Mon 13:05", "P4": "Tue 09:05" },
+    "5": { "arrival": "09:15", "P1": "Mon 09:30", "P2": "Mon 10:15", "P3": "Mon 13:15", "P4": "Tue 09:15" },
+    "6": { "arrival": "09:40", "P1": "Mon 09:55", "P2": "Mon 10:40", "P3": "Mon 13:40", "P4": "Tue 09:40" },
+    "7": { "arrival": "10:00", "P1": "Mon 10:15", "P2": "Mon 11:00", "P3": "Mon 14:00", "P4": "Tue 10:00" },
+    "8": { "arrival": "10:30", "P1": "Mon 10:45", "P2": "Mon 11:30", "P3": "Mon 14:30", "P4": "Tue 10:30" },
+    "9": { "arrival": "11:00", "P1": "Mon 11:15", "P2": "Mon 12:00", "P3": "Mon 15:00", "P4": "Tue 11:00" },
+    "10": { "arrival": "11:20", "P1": "Mon 11:35", "P2": "Mon 12:20", "P3": "Mon 15:20", "P4": "Tue 11:20" },
+    "11": { "arrival": "11:45", "P1": "Mon 12:00", "P2": "Mon 12:45", "P3": "Mon 15:45", "P4": "Tue 11:45" },
+    "12": { "arrival": "12:10", "P1": "Mon 12:25", "P2": "Mon 13:10", "P3": "Mon 16:10", "P4": "Tue 12:10" }
+  },
+  "customers": [
+    { "id": "C01", "name": "Adebayo Bello" },
+    { "id": "C02", "name": "Ngozi Eze" },
+    { "id": "C03", "name": "Sade Williams" },
+    { "id": "C04", "name": "Tunde Salako" },
+    { "id": "C05", "name": "Chioma Obi" },
+    { "id": "C06", "name": "Adeola Bello" },
+    { "id": "C07", "name": "Emeka Johnson" },
+    { "id": "C08", "name": "Fatima Yusuf" },
+    { "id": "C09", "name": "Kunle Adeyemi" },
+    { "id": "C10", "name": "Hadiza Musa" }
+  ],
+  "statuses": [
+    { "id": "new", "text": "New" },
+    { "id": "in_progress", "text": "In progress" },
+    { "id": "waiting_customer", "text": "Waiting on customer" },
+    { "id": "waiting_internal", "text": "Waiting on internal" },
+    { "id": "resolved", "text": "Resolved" }
+  ],
+  "priorities": [
+    { "id": "P1", "text": "P1" },
+    { "id": "P2", "text": "P2" },
+    { "id": "P3", "text": "P3" },
+    { "id": "P4", "text": "P4" }
+  ],
+  "teams": [
+    { "id": "customer_support", "text": "Customer Support" },
+    { "id": "billing_payments", "text": "Billing and Payments" },
+    { "id": "field_services", "text": "Field Services" },
+    { "id": "service_changes", "text": "Service Changes and Installations" },
+    { "id": "network_operations", "text": "Network Operations" }
+  ],
+  "tags": [
+    { "id": "payment_not_reflected", "text": "payment_not_reflected" },
+    { "id": "no_connection", "text": "no_connection" },
+    { "id": "power_related", "text": "power_related" },
+    { "id": "needs_technician", "text": "needs_technician" },
+    { "id": "slow_speed", "text": "slow_speed" },
+    { "id": "area_outage", "text": "area_outage" },
+    { "id": "account_access", "text": "account_access" },
+    { "id": "service_request", "text": "service_request" },
+    { "id": "complaint", "text": "complaint" },
+    { "id": "question", "text": "question" }
+  ],
+  "tickets": [
+    {
+      "n": 1, "requester": "C01", "status": "in_progress", "altStatuses": ["waiting_internal"],
+      "priority": "P3", "team": "billing_payments", "tags": ["payment_not_reflected"],
+      "finding": [
+        "Transfer payment reported, plan inactive and reference supplied.",
+        "Payment reported and plan inactive.",
+        "Card payment reported, no matching credit found.",
+        "Payment found and plan activated."
+      ],
+      "action": [
+        "Check payment status.",
+        "Send the reference to Finance.",
+        "Activate the plan now.",
+        "Ask the customer to pay again."
+      ],
+      "ownerTime": [
+        "Support agent, Mon 10:10",
+        "Support agent, Tue 17:00",
+        "Finance, Mon 10:10",
+        "Finance, Tue 17:00"
+      ]
+    },
+    {
+      "n": 2, "requester": "C02", "status": "resolved", "altStatuses": ["in_progress"],
+      "priority": "P3", "team": "customer_support", "tags": ["no_connection", "power_related"],
+      "finding": [
+        "Connection restored after router restart.",
+        "Connection lost after a power cut.",
+        "Connection still down after restart.",
+        "Router faulty, technician needed."
+      ],
+      "action": [
+        "Record the recovery and close the case.",
+        "Confirm the connection is stable and keep the case open.",
+        "Book a technician visit.",
+        "Escalate to Network Operations."
+      ],
+      "ownerTime": [
+        "Support agent, Mon 09:00",
+        "Support agent, Tue 14:00",
+        "Technician, Mon 09:00",
+        "Technician, Tue 14:00"
+      ]
+    },
+    {
+      "n": 3, "requester": "C03", "status": "waiting_internal", "altStatuses": ["in_progress"],
+      "priority": "P3", "team": "billing_payments", "tags": ["payment_not_reflected"],
+      "finding": [
+        "No matching card credit found. Reference sent to Finance.",
+        "No matching credit found.",
+        "Payment found and plan activated.",
+        "Card declined by the bank."
+      ],
+      "action": [
+        "Finance investigates the payment discrepancy.",
+        "Check payment status again.",
+        "Activate the plan without a match.",
+        "Promise a refund."
+      ],
+      "ownerTime": [
+        "Finance, Mon 15:00",
+        "Finance, Tue 10:00",
+        "Support agent, Mon 15:00",
+        "Support agent, Tue 10:00"
+      ]
+    },
+    {
+      "n": 4, "requester": "C04", "status": "waiting_customer", "altStatuses": ["in_progress"],
+      "priority": "P3", "team": "billing_payments", "tags": ["payment_not_reflected"],
+      "finding": [
+        "Payment reported but reference not supplied.",
+        "Payment reported and plan inactive.",
+        "Reference supplied and sent to Finance.",
+        "Customer has not made a payment."
+      ],
+      "action": [
+        "Request the payment reference.",
+        "Check payment status.",
+        "Activate the plan.",
+        "Close the case."
+      ],
+      "ownerTime": [
+        "Customer, Mon 16:00",
+        "Customer, Tue 13:00",
+        "Finance, Mon 16:00",
+        "Finance, Tue 13:00"
+      ]
+    },
+    {
+      "n": 5, "requester": "C05", "status": "in_progress", "altStatuses": ["waiting_customer"],
+      "priority": "P3", "team": "customer_support", "tags": ["no_connection", "power_related"],
+      "finding": [
+        "Connection unavailable and the router shows a red light after power returned.",
+        "Connection unavailable after a power cut.",
+        "Connection restored after a restart.",
+        "Router has no power."
+      ],
+      "action": [
+        "Continue the approved router and connection checks.",
+        "Ask the customer to restart the router.",
+        "Book a technician visit now.",
+        "Tell the customer to replace the router."
+      ],
+      "ownerTime": [
+        "Support agent, Mon 10:15",
+        "Support agent, Tue 13:15",
+        "Technician, Mon 10:15",
+        "Technician, Tue 13:15"
+      ]
+    },
+    {
+      "n": 6, "requester": "C06", "status": "resolved", "altStatuses": ["in_progress"],
+      "priority": "P3", "team": "billing_payments", "tags": ["payment_not_reflected"],
+      "finding": [
+        "Payment found and plan activated.",
+        "Payment found.",
+        "No matching payment found.",
+        "Payment reported but no reference supplied."
+      ],
+      "action": [
+        "Verify the plan is active and data works.",
+        "Tell the customer the plan is active.",
+        "Send the reference to Finance.",
+        "Ask the customer to pay again."
+      ],
+      "ownerTime": [
+        "Support agent, Mon 10:40",
+        "Support agent, Tue 13:40",
+        "Customer, Mon 10:40",
+        "Customer, Tue 13:40"
+      ]
+    },
+    {
+      "n": 7, "requester": "C07", "status": "waiting_internal", "altStatuses": ["in_progress"],
+      "priority": "P2", "team": "field_services", "tags": ["no_connection", "power_related", "needs_technician"],
+      "finding": [
+        "Five staff offline, restart failed and router shows a red light.",
+        "Five staff offline.",
+        "Connection restored after restart.",
+        "Whole estate offline."
+      ],
+      "action": [
+        "Arrange the technician visit.",
+        "Ask the customer to check the cables again.",
+        "Ask for the router password.",
+        "Tell the customer to replace the router."
+      ],
+      "ownerTime": [
+        "Technician, Mon 14:00",
+        "Technician, Tue 14:00",
+        "Support agent, Mon 14:00",
+        "Support agent, Tue 14:00"
+      ]
+    },
+    {
+      "n": 8, "requester": "C01", "status": "resolved", "altStatuses": ["in_progress"],
+      "priority": "P4", "team": "customer_support", "tags": ["question"],
+      "finding": [
+        "Identity verified and renewal date answered.",
+        "Renewal date answered.",
+        "Identity not verified, renewal date withheld.",
+        "Customer requests a plan change."
+      ],
+      "action": [
+        "Record the answer and close the inquiry.",
+        "Record the answer and keep the case open.",
+        "Request secure verification.",
+        "Book a technician visit."
+      ],
+      "ownerTime": [
+        "Support agent, Mon 11:00",
+        "Support agent, Wed 12:00",
+        "Customer, Mon 11:00",
+        "Customer, Wed 12:00"
+      ]
+    },
+    {
+      "n": 9, "requester": "C08", "status": "new", "altStatuses": ["in_progress"],
+      "priority": "P4", "team": "service_changes", "tags": ["service_request"],
+      "finding": [
+        "Installation move to a new address has not been handled.",
+        "Customer asked for an installation move.",
+        "Installation move completed.",
+        "Customer reports no connection."
+      ],
+      "action": [
+        "Progress the address change request.",
+        "Record the new address in the case note.",
+        "Close the inquiry.",
+        "Book a technician for the old address."
+      ],
+      "ownerTime": [
+        "Support agent, Tue 16:00",
+        "Support agent, Wed 16:00",
+        "Customer, Tue 16:00",
+        "Customer, Wed 16:00"
+      ]
+    },
+    {
+      "n": 10, "requester": "C09", "status": "in_progress", "altStatuses": ["waiting_internal"],
+      "priority": "P3", "team": "customer_support", "tags": ["complaint", "slow_speed"],
+      "finding": [
+        "Slow speeds reported for one week and the customer requests a discount.",
+        "Slow speeds reported for one week.",
+        "Speed problem fixed.",
+        "Customer cancels service."
+      ],
+      "action": [
+        "Investigate the speed problem and respond to the discount request.",
+        "Investigate the speed problem.",
+        "Approve the discount now.",
+        "Close the case."
+      ],
+      "ownerTime": [
+        "Support agent, Mon 16:00",
+        "Support agent, Tue 11:20",
+        "Finance, Mon 16:00",
+        "Finance, Tue 11:20"
+      ]
+    },
+    {
+      "n": 11, "requester": "C02", "status": "waiting_customer", "altStatuses": ["in_progress"],
+      "priority": "P4", "team": "customer_support", "tags": ["account_access"],
+      "finding": [
+        "Identity unverified. A password was included in the message.",
+        "Customer cannot sign in.",
+        "Identity verified and login reset.",
+        "Customer password is incorrect."
+      ],
+      "action": [
+        "Request secure verification and keep the supplied credential out of the case record.",
+        "Request verification through the secure route.",
+        "Reset the login using the new number.",
+        "Update the record with the new number."
+      ],
+      "ownerTime": [
+        "Customer, Mon 17:00",
+        "Customer, Wed 17:00",
+        "Support agent, Mon 17:00",
+        "Support agent, Wed 17:00"
+      ]
+    },
+    {
+      "n": 12, "requester": "C10", "status": "waiting_internal", "altStatuses": ["in_progress"],
+      "priority": "P1", "team": "network_operations", "tags": ["area_outage"],
+      "finding": [
+        "Whole estate offline after a confirmed fibre cut. Network team informed.",
+        "Whole estate offline.",
+        "One customer offline after a power cut.",
+        "Estate restored."
+      ],
+      "action": [
+        "Track restoration and give the appropriate update.",
+        "Keep the case open and wait for news.",
+        "Tell customers a restoration time now.",
+        "Book a technician for each customer."
+      ],
+      "ownerTime": [
+        "Network team, Mon 13:10",
+        "Network team, Tue 10:10",
+        "Support agent, Mon 13:10",
+        "Support agent, Tue 10:10"
+      ]
+    }
+  ],
+  "articles": {
+    "patterns": {
+      "A": { "tickets": [1, 3, 4, 6] },
+      "B": { "tickets": [2, 5, 7] }
+    },
+    "dropdowns": {
+      "title": {
+        "A": ["Payment made, plan not active", "Customer plan problem"],
+        "B": ["No connection after a power cut", "Customer connection problem"],
+        "other": ["Customer cannot sign in", "Slow speeds for a week"]
+      },
+      "issue": {
+        "A": ["The customer reports payment, but the plan remains inactive.", "The customer reports that the plan is inactive."],
+        "B": ["The customer has no connection after a power cut.", "The customer reports the connection is down."],
+        "other": ["The customer cannot sign in to the portal.", "The customer reports slow speeds for a week."]
+      },
+      "environment": {
+        "A": ["Customer account and payments system", "Customer account"],
+        "B": ["Customer router and connection equipment", "Customer router"],
+        "other": ["Customer portal and password reset tool", "Estate network core and fibre route"]
+      },
+      "verification": {
+        "A": ["The plan shows active and data works.", "The plan shows active."],
+        "B": ["The light is steady and a page loads.", "The light is steady."],
+        "other": ["The customer says thank you.", "The ticket status is changed to Resolved."]
+      },
+      "stop": {
+        "A": ["No payment found or conflicting status. Send the case to Finance.", "No payment found. Escalate to a supervisor."],
+        "B": ["Red light after restart. Book a technician.", "Red light after restart. Escalate to a supervisor."],
+        "other": ["The customer has not replied for one hour. Close the case.", "The first step fails once. Replace the equipment."]
+      }
+    },
+    "steps": {
+      "A": [
+        "Confirm identity using the approved method.",
+        "Obtain the payment reference and payment time.",
+        "Check payment status in the payments system.",
+        "Compare the result with the payment rules.",
+        "Activate the plan if payment is confirmed, or send the reference to Finance if no match is found.",
+        "Record the outcome and give the customer the next update time."
+      ],
+      "B": [
+        "Check that the router has power and is switched on.",
+        "Wait for the router to finish starting.",
+        "Read the router lights against the guide.",
+        "Restart the router once.",
+        "Check the cable connections.",
+        "If the light stays red, book a technician visit."
+      ],
+      "other": [
+        "Activate the plan before checking the payment.",
+        "Promise a refund without verifying the payment.",
+        "Ask for the router password.",
+        "Tell the customer to replace the router."
+      ]
+    },
+    "leaveOut": {
+      "correct": ["Customer name", "Phone number", "Payment reference", "Account number"],
+      "other": ["Router light colour", "Plan name", "Payment rules", "Support team name"]
+    }
+  }
+}

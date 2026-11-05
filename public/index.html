@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-NG">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HarbourDesk. Harbourline Broadband support desk practical</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0F2A4A">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div id="app"></div>
+  <div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
+  <div class="visually-hidden" id="live-polite" aria-live="polite" role="status"></div>
+  <div class="visually-hidden" id="live-assertive" aria-live="assertive" role="alert"></div>
+  <noscript><p class="content">HarbourDesk needs JavaScript to run.</p></noscript>
+
+  <!-- Static definition so Netlify detects the form at deploy. The functions post to it at shift closeout. -->
+  <form name="week8-shift-results" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="week8-shift-results">
+    <input name="bot-field">
+    <input name="learner_id">
+    <input name="learner_name">
+    <input name="learner_email">
+    <input name="attempt_id">
+    <input name="attempt_no">
+    <input name="started_at">
+    <input name="deadline_at">
+    <input name="submitted_at">
+    <input name="submit_reason">
+    <input name="total_score">
+    <input name="register_score">
+    <input name="articles_score">
+    <textarea name="field_marks_json"></textarea>
+    <textarea name="ticket_work_json"></textarea>
+    <textarea name="article_work_json"></textarea>
+    <input name="key_version">
+  </form>
+
+  <script type="module" src="/js/app.mjs"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{
+  "sections": [
+    { "id": "statuses", "title": "Statuses" },
+    { "id": "priorities", "title": "Priorities and SLA targets" },
+    { "id": "tags", "title": "Tags" },
+    { "id": "teams", "title": "Teams" },
+    { "id": "verification", "title": "Verification and privacy" },
+    { "id": "payments", "title": "Payment rules" },
+    { "id": "lights", "title": "Router lights" }
+  ],
+  "statuses": [
+    { "id": "new", "text": "New", "use": "The case is recorded and work has not started." },
+    { "id": "in_progress", "text": "In progress", "use": "The case is being worked on." },
+    { "id": "waiting_customer", "text": "Waiting on customer", "use": "The next step depends on the customer." },
+    { "id": "waiting_internal", "text": "Waiting on internal", "use": "The next step depends on another team or internal resource." },
+    { "id": "resolved", "text": "Resolved", "use": "The issue has been addressed." }
+  ],
+  "priorities": [
+    { "id": "P1", "definition": "Critical service outage affecting many customers.", "target": "15 minutes" },
+    { "id": "P2", "definition": "Important service impairment affecting several users, with limited workaround.", "target": "1 business hour" },
+    { "id": "P3", "definition": "Significant but contained issue affecting one customer.", "target": "4 business hours" },
+    { "id": "P4", "definition": "Information request, minor issue or non urgent matter.", "target": "1 business day" }
+  ],
+  "slaIntro": "First response SLA. SLA means service level agreement, a target for a service response. The due time is the arrival time plus the target.",
+  "slaNote": "Business hours are Monday to Friday, 08:00 to 18:00. P1 runs on clock time. The next action due time is a separate time, set by the next step in the case.",
+  "tagsIntro": "Select up to three tags.",
+  "tags": [
+    { "id": "payment_not_reflected", "use": "The customer says they paid and the plan has not changed." },
+    { "id": "no_connection", "use": "The customer has no internet connection." },
+    { "id": "power_related", "use": "The problem began with a power cut or the return of power." },
+    { "id": "needs_technician", "use": "A technician must visit." },
+    { "id": "slow_speed", "use": "The internet works but is slower than the plan." },
+    { "id": "area_outage", "use": "Many customers in one area are offline." },
+    { "id": "account_access", "use": "The customer cannot sign in or change account access." },
+    { "id": "service_request", "use": "The customer asks for a change, such as moving an installation." },
+    { "id": "complaint", "use": "The customer is dissatisfied or asks for compensation." },
+    { "id": "question", "use": "The customer asks for information." }
+  ],
+  "teams": [
+    { "id": "customer_support", "name": "Customer Support", "use": "Connection checks, account access, questions, complaints and speed issues." },
+    { "id": "billing_payments", "name": "Billing and Payments", "use": "All payment cases. Checks payment status and activates plans." },
+    { "id": "field_services", "name": "Field Services", "use": "Technician visits." },
+    { "id": "service_changes", "name": "Service Changes and Installations", "use": "New installations and address moves." },
+    { "id": "network_operations", "name": "Network Operations", "use": "Outages and incident records." },
+    { "id": "finance", "name": "Finance", "use": "A back office department. Billing and Payments sends unmatched payment references to Finance." }
+  ],
+  "verification": [
+    "Confirm identity using two items on record: the account number and installation address.",
+    "Share account details after both checks pass.",
+    "An unverified caller completes the secure verification form.",
+    "Keep passwords out of case records and use the secure route for access requests."
+  ],
+  "payments": "A payment counts when the amount equals the plan price and the reference matches in the payments system. If there is no match, or the status conflicts, send the reference to Finance.",
+  "prices": [
+    { "plan": "Home 30", "price": "₦25,000" },
+    { "plan": "Home 50", "price": "₦35,000" },
+    { "plan": "Business 100", "price": "₦65,000" }
+  ],
+  "lights": [
+    { "id": "steady", "label": "Steady green", "meaning": "Working." },
+    { "id": "blinking", "label": "Blinking green", "meaning": "Starting." },
+    { "id": "red", "label": "Red", "meaning": "No signal from the line." },
+    { "id": "off", "label": "Off", "meaning": "No power." }
+  ],
+  "handover": {
+    "from": "Tola Akinyemi",
+    "role": "Support Lead",
+    "subject": "Handover: active cases",
+    "time": "08:00",
+    "text": "Each active case needs an owner, next action and next update time at handover. Related estate outage reports use incident NOC-261026-01. Network Operations confirms the restoration estimate before it is shared with customers."
+  }
+}

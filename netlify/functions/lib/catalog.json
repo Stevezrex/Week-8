@@ -1,0 +1,1323 @@
+{
+ "version": "w8-2026-10-25-v1",
+ "common": {
+  "requester": [
+   {
+    "id": "C01",
+    "text": "Adebayo Bello"
+   },
+   {
+    "id": "C02",
+    "text": "Ngozi Eze"
+   },
+   {
+    "id": "C03",
+    "text": "Sade Williams"
+   },
+   {
+    "id": "C04",
+    "text": "Tunde Salako"
+   },
+   {
+    "id": "C05",
+    "text": "Chioma Obi"
+   },
+   {
+    "id": "C06",
+    "text": "Adeola Bello"
+   },
+   {
+    "id": "C07",
+    "text": "Emeka Johnson"
+   },
+   {
+    "id": "C08",
+    "text": "Fatima Yusuf"
+   },
+   {
+    "id": "C09",
+    "text": "Kunle Adeyemi"
+   },
+   {
+    "id": "C10",
+    "text": "Hadiza Musa"
+   }
+  ],
+  "status": [
+   {
+    "id": "new",
+    "text": "New"
+   },
+   {
+    "id": "in_progress",
+    "text": "In progress"
+   },
+   {
+    "id": "waiting_customer",
+    "text": "Waiting on customer"
+   },
+   {
+    "id": "waiting_internal",
+    "text": "Waiting on internal"
+   },
+   {
+    "id": "resolved",
+    "text": "Resolved"
+   }
+  ],
+  "priority": [
+   {
+    "id": "P1",
+    "text": "P1"
+   },
+   {
+    "id": "P2",
+    "text": "P2"
+   },
+   {
+    "id": "P3",
+    "text": "P3"
+   },
+   {
+    "id": "P4",
+    "text": "P4"
+   }
+  ],
+  "team": [
+   {
+    "id": "customer_support",
+    "text": "Customer Support"
+   },
+   {
+    "id": "billing_payments",
+    "text": "Billing and Payments"
+   },
+   {
+    "id": "field_services",
+    "text": "Field Services"
+   },
+   {
+    "id": "service_changes",
+    "text": "Service Changes and Installations"
+   },
+   {
+    "id": "network_operations",
+    "text": "Network Operations"
+   }
+  ],
+  "tags": [
+   {
+    "id": "payment_not_reflected",
+    "text": "payment_not_reflected"
+   },
+   {
+    "id": "no_connection",
+    "text": "no_connection"
+   },
+   {
+    "id": "power_related",
+    "text": "power_related"
+   },
+   {
+    "id": "needs_technician",
+    "text": "needs_technician"
+   },
+   {
+    "id": "slow_speed",
+    "text": "slow_speed"
+   },
+   {
+    "id": "area_outage",
+    "text": "area_outage"
+   },
+   {
+    "id": "account_access",
+    "text": "account_access"
+   },
+   {
+    "id": "service_request",
+    "text": "service_request"
+   },
+   {
+    "id": "complaint",
+    "text": "complaint"
+   },
+   {
+    "id": "question",
+    "text": "question"
+   }
+  ]
+ },
+ "tickets": {
+  "1": {
+   "sla": [
+    {
+     "id": "o4bdfd1ee78",
+     "text": "Mon 08:25"
+    },
+    {
+     "id": "o084bb1c8a6",
+     "text": "Mon 09:10"
+    },
+    {
+     "id": "o5c6257e607",
+     "text": "Mon 12:10"
+    },
+    {
+     "id": "o10e5dd019d",
+     "text": "Tue 08:10"
+    }
+   ],
+   "finding": [
+    {
+     "id": "of56920bb78",
+     "text": "Transfer payment reported, plan inactive and reference supplied."
+    },
+    {
+     "id": "o93cc7c0c48",
+     "text": "Payment reported and plan inactive."
+    },
+    {
+     "id": "oda8ec04fb4",
+     "text": "Card payment reported, no matching credit found."
+    },
+    {
+     "id": "o30d2642bc2",
+     "text": "Payment found and plan activated."
+    }
+   ],
+   "action": [
+    {
+     "id": "oa68ff559cb",
+     "text": "Check payment status."
+    },
+    {
+     "id": "o4af3dc864d",
+     "text": "Send the reference to Finance."
+    },
+    {
+     "id": "o9bc995e68a",
+     "text": "Activate the plan now."
+    },
+    {
+     "id": "o15517c91d1",
+     "text": "Ask the customer to pay again."
+    }
+   ],
+   "ownerTime": [
+    {
+     "id": "o5175d1fdef",
+     "text": "Support agent, Mon 10:10"
+    },
+    {
+     "id": "o433d86970e",
+     "text": "Support agent, Tue 17:00"
+    },
+    {
+     "id": "of8a91a6bb8",
+     "text": "Finance, Mon 10:10"
+    },
+    {
+     "id": "o16d609a835",
+     "text": "Finance, Tue 17:00"
+    }
+   ]
+  },
+  "2": {
+   "sla": [
+    {
+     "id": "o384dc55b1a",
+     "text": "Mon 08:35"
+    },
+    {
+     "id": "ofab235f8c7",
+     "text": "Mon 09:20"
+    },
+    {
+     "id": "o43475fd649",
+     "text": "Mon 12:20"
+    },
+    {
+     "id": "o65570cf5bc",
+     "text": "Tue 08:20"
+    }
+   ],
+   "finding": [
+    {
+     "id": "o0882784d39",
+     "text": "Connection restored after router restart."
+    },
+    {
+     "id": "o441ab465a6",
+     "text": "Connection lost after a power cut."
+    },
+    {
+     "id": "o10db27cafb",
+     "text": "Connection still down after restart."
+    },
+    {
+     "id": "of96becc161",
+     "text": "Router faulty, technician needed."
+    }
+   ],
+   "action": [
+    {
+     "id": "ob203f4454f",
+     "text": "Record the recovery and close the case."
+    },
+    {
+     "id": "obc25719aca",
+     "text": "Confirm the connection is stable and keep the case open."
+    },
+    {
+     "id": "o06ede87296",
+     "text": "Book a technician visit."
+    },
+    {
+     "id": "of61df3b5fe",
+     "text": "Escalate to Network Operations."
+    }
+   ],
+   "ownerTime": [
+    {
+     "id": "odfbfd50fb2",
+     "text": "Support agent, Mon 09:00"
+    },
+    {
+     "id": "o7273b9f47d",
+     "text": "Support agent, Tue 14:00"
+    },
+    {
+     "id": "o90904fd788",
+     "text": "Technician, Mon 09:00"
+    },
+    {
+     "id": "o9dc27c934b",
+     "text": "Technician, Tue 14:00"
+    }
+   ]
+  },
+  "3": {
+   "sla": [
+    {
+     "id": "oe3f2e62bbf",
+     "text": "Mon 08:50"
+    },
+    {
+     "id": "o49981ec8dc",
+     "text": "Mon 09:35"
+    },
+    {
+     "id": "o47f33cf05d",
+     "text": "Mon 12:35"
+    },
+    {
+     "id": "o31078c3b79",
+     "text": "Tue 08:35"
+    }
+   ],
+   "finding": [
+    {
+     "id": "o64f4575081",
+     "text": "No matching card credit found. Reference sent to Finance."
+    },
+    {
+     "id": "oad5104c17a",
+     "text": "No matching credit found."
+    },
+    {
+     "id": "o8cf879937a",
+     "text": "Payment found and plan activated."
+    },
+    {
+     "id": "o0852c05c5a",
+     "text": "Card declined by the bank."
+    }
+   ],
+   "action": [
+    {
+     "id": "oa545b9cba7",
+     "text": "Finance investigates the payment discrepancy."
+    },
+    {
+     "id": "o6b9ebe184a",
+     "text": "Check payment status again."
+    },
+    {
+     "id": "ob43d14d599",
+     "text": "Activate the plan without a match."
+    },
+    {
+     "id": "o1cf7200b32",
+     "text": "Promise a refund."
+    }
+   ],
+   "ownerTime": [
+    {
+     "id": "of7346a6e85",
+     "text": "Finance, Mon 15:00"
+    },
+    {
+     "id": "oa9236199f5",
+     "text": "Finance, Tue 10:00"
+    },
+    {
+     "id": "ob000b27867",
+     "text": "Support agent, Mon 15:00"
+    },
+    {
+     "id": "oe69be09a1f",
+     "text": "Support agent, Tue 10:00"
+    }
+   ]
+  },
+  "4": {
+   "sla": [
+    {
+     "id": "odebcc9c2b0",
+     "text": "Mon 09:20"
+    },
+    {
+     "id": "o79ae176a9f",
+     "text": "Mon 10:05"
+    },
+    {
+     "id": "o3d38d25bbe",
+     "text": "Mon 13:05"
+    },
+    {
+     "id": "o30ed11cc58",
+     "text": "Tue 09:05"
+    }
+   ],
+   "finding": [
+    {
+     "id": "od1d80d0871",
+     "text": "Payment reported but reference not supplied."
+    },
+    {
+     "id": "oac43e6ef86",
+     "text": "Payment reported and plan inactive."
+    },
+    {
+     "id": "ob67cffed8d",
+     "text": "Reference supplied and sent to Finance."
+    },
+    {
+     "id": "o3f1e342896",
+     "text": "Customer has not made a payment."
+    }
+   ],
+   "action": [
+    {
+     "id": "ob0161c607e",
+     "text": "Request the payment reference."
+    },
+    {
+     "id": "o6656aa40ef",
+     "text": "Check payment status."
+    },
+    {
+     "id": "o1120c79cf9",
+     "text": "Activate the plan."
+    },
+    {
+     "id": "oa57b61e897",
+     "text": "Close the case."
+    }
+   ],
+   "ownerTime": [
+    {
+     "id": "o078efd88a3",
+     "text": "Customer, Mon 16:00"
+    },
+    {
+     "id": "ofad85d0089",
+     "text": "Customer, Tue 13:00"
+    },
+    {
+     "id": "oc2968de317",
+     "text": "Finance, Mon 16:00"
+    },
+    {
+     "id": "of06c9e92a8",
+     "text": "Finance, Tue 13:00"
+    }
+   ]
+  },
+  "5": {
+   "sla": [
+    {
+     "id": "of322331ab8",
+     "text": "Mon 09:30"
+    },
+    {
+     "id": "obd846f4a75",
+     "text": "Mon 10:15"
+    },
+    {
+     "id": "o1ef460176d",
+     "text": "Mon 13:15"
+    },
+    {
+     "id": "oacaaa64cb9",
+     "text": "Tue 09:15"
+    }
+   ],
+   "finding": [
+    {
+     "id": "obff307b4d6",
+     "text": "Connection unavailable and the router shows a red light after power returned."
+    },
+    {
+     "id": "o54a33cad3e",
+     "text": "Connection unavailable after a power cut."
+    },
+    {
+     "id": "oea2c3262a8",
+     "text": "Connection restored after a restart."
+    },
+    {
+     "id": "o5f8053dfb9",
+     "text": "Router has no power."
+    }
+   ],
+   "action": [
+    {
+     "id": "od592febd9a",
+     "text": "Continue the approved router and connection checks."
+    },
+    {
+     "id": "o19b9549ec8",
+     "text": "Ask the customer to restart the router."
+    },
+    {
+     "id": "o293c609528",
+     "text": "Book a technician visit now."
+    },
+    {
+     "id": "o45151ec08f",
+     "text": "Tell the customer to replace the router."
+    }
+   ],
+   "ownerTime": [
+    {
+     "id": "o4f9f39d327",
+     "text": "Support agent, Mon 10:15"
+    },
+    {
+     "id": "o3ee70128c6",
+     "text": "Support agent, Tue 13:15"
+    },
+    {
+     "id": "oe6a7b85abb",
+     "text": "Technician, Mon 10:15"
+    },
+    {
+     "id": "obb134f6be4",
+     "text": "Technician, Tue 13:15"
+    }
+   ]
+  },
+  "6": {
+   "sla": [
+    {
+     "id": "o2636f3983a",
+     "text": "Mon 09:55"
+    },
+    {
+     "id": "o187d69c234",
+     "text": "Mon 10:40"
+    },
+    {
+     "id": "ofbe778dcb1",
+     "text": "Mon 13:40"
+    },
+    {
+     "id": "o9a8f40ea02",
+     "text": "Tue 09:40"
+    }
+   ],
+   "finding": [
+    {
+     "id": "obe68214b91",
+     "text": "Payment found and plan activated."
+    },
+    {
+     "id": "o9ff9692e9a",
+     "text": "Payment found."
+    },
+    {
+     "id": "o73699b8f3e",
+     "text": "No matching payment found."
+    },
+    {
+     "id": "o1e0c768b75",
+     "text": "Payment reported but no reference supplied."
+    }
+   ],
+   "action": [
+    {
+     "id": "oa601faa7cc",
+     "text": "Verify the plan is active and data works."
+    },
+    {
+     "id": "oa0ca6d2cbd",
+     "text": "Tell the customer the plan is active."
+    },
+    {
+     "id": "oba2e42656e",
+     "text": "Send the reference to Finance."
+    },
+    {
+     "id": "o5c415f84a0",
+     "text": "Ask the customer to pay again."
+    }
+   ],
+   "ownerTime": [
+    {
+     "id": "o739c37fe73",
+     "text": "Support agent, Mon 10:40"
+    },
+    {
+     "id": "o87dd9796e0",
+     "text": "Support agent, Tue 13:40"
+    },
+    {
+     "id": "o037dbb71b8",
+     "text": "Customer, Mon 10:40"
+    },
+    {
+     "id": "o57f8a726f4",
+     "text": "Customer, Tue 13:40"
+    }
+   ]
+  },
+  "7": {
+   "sla": [
+    {
+     "id": "o532b771485",
+     "text": "Mon 10:15"
+    },
+    {
+     "id": "od5d3387134",
+     "text": "Mon 11:00"
+    },
+    {
+     "id": "o71824a721a",
+     "text": "Mon 14:00"
+    },
+    {
+     "id": "o53fff53d90",
+     "text": "Tue 10:00"
+    }
+   ],
+   "finding": [
+    {
+     "id": "odba0258b99",
+     "text": "Five staff offline, restart failed and router shows a red light."
+    },
+    {
+     "id": "o79a80edfd8",
+     "text": "Five staff offline."
+    },
+    {
+     "id": "o325ad251f0",
+     "text": "Connection restored after restart."
+    },
+    {
+     "id": "of8651cb585",
+     "text": "Whole estate offline."
+    }
+   ],
+   "action": [
+    {
+     "id": "o1bda78f401",
+     "text": "Arrange the technician visit."
+    },
+    {
+     "id": "odf38915e17",
+     "text": "Ask the customer to check the cables again."
+    },
+    {
+     "id": "o229a1b62d8",
+     "text": "Ask for the router password."
+    },
+    {
+     "id": "o3f5c684fa3",
+     "text": "Tell the customer to replace the router."
+    }
+   ],
+   "ownerTime": [
+    {
+     "id": "o2576f30c48",
+     "text": "Technician, Mon 14:00"
+    },
+    {
+     "id": "o046868fe8a",
+     "text": "Technician, Tue 14:00"
+    },
+    {
+     "id": "of2b5917f41",
+     "text": "Support agent, Mon 14:00"
+    },
+    {
+     "id": "o414da3867f",
+     "text": "Support agent, Tue 14:00"
+    }
+   ]
+  },
+  "8": {
+   "sla": [
+    {
+     "id": "od19dc71470",
+     "text": "Mon 10:45"
+    },
+    {
+     "id": "odbbadc142a",
+     "text": "Mon 11:30"
+    },
+    {
+     "id": "o18e106159a",
+     "text": "Mon 14:30"
+    },
+    {
+     "id": "obf159ea615",
+     "text": "Tue 10:30"
+    }
+   ],
+   "finding": [
+    {
+     "id": "o5d247487df",
+     "text": "Identity verified and renewal date answered."
+    },
+    {
+     "id": "oa68d458dac",
+     "text": "Renewal date answered."
+    },
+    {
+     "id": "o032243a49b",
+     "text": "Identity not verified, renewal date withheld."
+    },
+    {
+     "id": "oc01b056989",
+     "text": "Customer requests a plan change."
+    }
+   ],
+   "action": [
+    {
+     "id": "o589ecb5fc3",
+     "text": "Record the answer and close the inquiry."
+    },
+    {
+     "id": "of35200e8ac",
+     "text": "Record the answer and keep the case open."
+    },
+    {
+     "id": "oef706bea31",
+     "text": "Request secure verification."
+    },
+    {
+     "id": "o15afa9e57a",
+     "text": "Book a technician visit."
+    }
+   ],
+   "ownerTime": [
+    {
+     "id": "oe98e39e742",
+     "text": "Support agent, Mon 11:00"
+    },
+    {
+     "id": "oab5311baa4",
+     "text": "Support agent, Wed 12:00"
+    },
+    {
+     "id": "o6cbbbe27a4",
+     "text": "Customer, Mon 11:00"
+    },
+    {
+     "id": "ob98353d508",
+     "text": "Customer, Wed 12:00"
+    }
+   ]
+  },
+  "9": {
+   "sla": [
+    {
+     "id": "o76ab7838d2",
+     "text": "Mon 11:15"
+    },
+    {
+     "id": "o8d95976d31",
+     "text": "Mon 12:00"
+    },
+    {
+     "id": "o91e6b765c6",
+     "text": "Mon 15:00"
+    },
+    {
+     "id": "o81a9542aaf",
+     "text": "Tue 11:00"
+    }
+   ],
+   "finding": [
+    {
+     "id": "od7689d99ad",
+     "text": "Installation move to a new address has not been handled."
+    },
+    {
+     "id": "o8e676b171c",
+     "text": "Customer asked for an installation move."
+    },
+    {
+     "id": "o938da83b9c",
+     "text": "Installation move completed."
+    },
+    {
+     "id": "oa0a0c8a413",
+     "text": "Customer reports no connection."
+    }
+   ],
+   "action": [
+    {
+     "id": "o4bebec7804",
+     "text": "Progress the address change request."
+    },
+    {
+     "id": "o0ca6ad2726",
+     "text": "Record the new address in the case note."
+    },
+    {
+     "id": "od7604dc041",
+     "text": "Close the inquiry."
+    },
+    {
+     "id": "o3ac4589874",
+     "text": "Book a technician for the old address."
+    }
+   ],
+   "ownerTime": [
+    {
+     "id": "o5e55c76842",
+     "text": "Support agent, Tue 16:00"
+    },
+    {
+     "id": "ob7ff02a746",
+     "text": "Support agent, Wed 16:00"
+    },
+    {
+     "id": "o101938d534",
+     "text": "Customer, Tue 16:00"
+    },
+    {
+     "id": "oa323c31d0d",
+     "text": "Customer, Wed 16:00"
+    }
+   ]
+  },
+  "10": {
+   "sla": [
+    {
+     "id": "o412ca65a97",
+     "text": "Mon 11:35"
+    },
+    {
+     "id": "o72e5ea07f6",
+     "text": "Mon 12:20"
+    },
+    {
+     "id": "oa9b4b10fa7",
+     "text": "Mon 15:20"
+    },
+    {
+     "id": "o22aeedf31e",
+     "text": "Tue 11:20"
+    }
+   ],
+   "finding": [
+    {
+     "id": "odbec6cc8b8",
+     "text": "Slow speeds reported for one week and the customer requests a discount."
+    },
+    {
+     "id": "odb4a6b8180",
+     "text": "Slow speeds reported for one week."
+    },
+    {
+     "id": "o7b754ab9c9",
+     "text": "Speed problem fixed."
+    },
+    {
+     "id": "ofadfa1769c",
+     "text": "Customer cancels service."
+    }
+   ],
+   "action": [
+    {
+     "id": "o0b679cf0d6",
+     "text": "Investigate the speed problem and respond to the discount request."
+    },
+    {
+     "id": "o1a626178f1",
+     "text": "Investigate the speed problem."
+    },
+    {
+     "id": "oee151468b1",
+     "text": "Approve the discount now."
+    },
+    {
+     "id": "od5dad978e4",
+     "text": "Close the case."
+    }
+   ],
+   "ownerTime": [
+    {
+     "id": "o6f574452a5",
+     "text": "Support agent, Mon 16:00"
+    },
+    {
+     "id": "of997346544",
+     "text": "Support agent, Tue 11:20"
+    },
+    {
+     "id": "of10cb61245",
+     "text": "Finance, Mon 16:00"
+    },
+    {
+     "id": "odd37480bd2",
+     "text": "Finance, Tue 11:20"
+    }
+   ]
+  },
+  "11": {
+   "sla": [
+    {
+     "id": "o26c5d132c2",
+     "text": "Mon 12:00"
+    },
+    {
+     "id": "o1c7018d93b",
+     "text": "Mon 12:45"
+    },
+    {
+     "id": "oc00eecda8a",
+     "text": "Mon 15:45"
+    },
+    {
+     "id": "oed52414e60",
+     "text": "Tue 11:45"
+    }
+   ],
+   "finding": [
+    {
+     "id": "o562467abb6",
+     "text": "Identity unverified. A password was included in the message."
+    },
+    {
+     "id": "oaf0c8d6d89",
+     "text": "Customer cannot sign in."
+    },
+    {
+     "id": "o1ea45ff7b5",
+     "text": "Identity verified and login reset."
+    },
+    {
+     "id": "o86c5a78701",
+     "text": "Customer password is incorrect."
+    }
+   ],
+   "action": [
+    {
+     "id": "o3de1331e54",
+     "text": "Request secure verification and keep the supplied credential out of the case record."
+    },
+    {
+     "id": "o33e66c90bb",
+     "text": "Request verification through the secure route."
+    },
+    {
+     "id": "o09ddbc164e",
+     "text": "Reset the login using the new number."
+    },
+    {
+     "id": "o20c59b074e",
+     "text": "Update the record with the new number."
+    }
+   ],
+   "ownerTime": [
+    {
+     "id": "o43894c6d9e",
+     "text": "Customer, Mon 17:00"
+    },
+    {
+     "id": "oc608db8182",
+     "text": "Customer, Wed 17:00"
+    },
+    {
+     "id": "o9707cf51d3",
+     "text": "Support agent, Mon 17:00"
+    },
+    {
+     "id": "o8cbb6e514b",
+     "text": "Support agent, Wed 17:00"
+    }
+   ]
+  },
+  "12": {
+   "sla": [
+    {
+     "id": "o5477b3b8de",
+     "text": "Mon 12:25"
+    },
+    {
+     "id": "o5c44c1adbe",
+     "text": "Mon 13:10"
+    },
+    {
+     "id": "oc9c60b81a6",
+     "text": "Mon 16:10"
+    },
+    {
+     "id": "o9de955400a",
+     "text": "Tue 12:10"
+    }
+   ],
+   "finding": [
+    {
+     "id": "o0dfa8b16f4",
+     "text": "Whole estate offline after a confirmed fibre cut. Network team informed."
+    },
+    {
+     "id": "o70fc673e50",
+     "text": "Whole estate offline."
+    },
+    {
+     "id": "o4dc0c9922d",
+     "text": "One customer offline after a power cut."
+    },
+    {
+     "id": "o505cf9a978",
+     "text": "Estate restored."
+    }
+   ],
+   "action": [
+    {
+     "id": "of8a383e2f1",
+     "text": "Track restoration and give the appropriate update."
+    },
+    {
+     "id": "of62e3b8492",
+     "text": "Keep the case open and wait for news."
+    },
+    {
+     "id": "o1511bfa95a",
+     "text": "Tell customers a restoration time now."
+    },
+    {
+     "id": "o6c93072f7d",
+     "text": "Book a technician for each customer."
+    }
+   ],
+   "ownerTime": [
+    {
+     "id": "ob271497f5e",
+     "text": "Network team, Mon 13:10"
+    },
+    {
+     "id": "o4c00a0e542",
+     "text": "Network team, Tue 10:10"
+    },
+    {
+     "id": "oc2516a9a2c",
+     "text": "Support agent, Mon 13:10"
+    },
+    {
+     "id": "oaf99cc63f4",
+     "text": "Support agent, Tue 10:10"
+    }
+   ]
+  }
+ },
+ "articles": {
+  "title": [
+   {
+    "id": "obb100ef765",
+    "text": "Payment made, plan not active"
+   },
+   {
+    "id": "od489bd558b",
+    "text": "Customer plan problem"
+   },
+   {
+    "id": "oa7a5bd56a7",
+    "text": "No connection after a power cut"
+   },
+   {
+    "id": "o1ece7c00dd",
+    "text": "Customer connection problem"
+   },
+   {
+    "id": "o4d3245cd3b",
+    "text": "Customer cannot sign in"
+   },
+   {
+    "id": "oadf0b63009",
+    "text": "Slow speeds for a week"
+   }
+  ],
+  "issue": [
+   {
+    "id": "o8c7d10a505",
+    "text": "The customer reports payment, but the plan remains inactive."
+   },
+   {
+    "id": "oc5d3f8bedc",
+    "text": "The customer reports that the plan is inactive."
+   },
+   {
+    "id": "o029e590917",
+    "text": "The customer has no connection after a power cut."
+   },
+   {
+    "id": "o1d179167c9",
+    "text": "The customer reports the connection is down."
+   },
+   {
+    "id": "o7646691058",
+    "text": "The customer cannot sign in to the portal."
+   },
+   {
+    "id": "o5795b1c986",
+    "text": "The customer reports slow speeds for a week."
+   }
+  ],
+  "environment": [
+   {
+    "id": "o1ff3ac89b4",
+    "text": "Customer account and payments system"
+   },
+   {
+    "id": "o54dcd14313",
+    "text": "Customer account"
+   },
+   {
+    "id": "oc565757e33",
+    "text": "Customer router and connection equipment"
+   },
+   {
+    "id": "o059fe019ee",
+    "text": "Customer router"
+   },
+   {
+    "id": "o246f89c679",
+    "text": "Customer portal and password reset tool"
+   },
+   {
+    "id": "ofc3b86d639",
+    "text": "Estate network core and fibre route"
+   }
+  ],
+  "verification": [
+   {
+    "id": "ob549985020",
+    "text": "The plan shows active and data works."
+   },
+   {
+    "id": "o724c3fbc9c",
+    "text": "The plan shows active."
+   },
+   {
+    "id": "o60f0269869",
+    "text": "The light is steady and a page loads."
+   },
+   {
+    "id": "o6d877a91d8",
+    "text": "The light is steady."
+   },
+   {
+    "id": "o2762a1cd65",
+    "text": "The customer says thank you."
+   },
+   {
+    "id": "ob9d31ed091",
+    "text": "The ticket status is changed to Resolved."
+   }
+  ],
+  "stop": [
+   {
+    "id": "o3e8020667d",
+    "text": "No payment found or conflicting status. Send the case to Finance."
+   },
+   {
+    "id": "ob63e4db760",
+    "text": "No payment found. Escalate to a supervisor."
+   },
+   {
+    "id": "oa1cde8d4fc",
+    "text": "Red light after restart. Book a technician."
+   },
+   {
+    "id": "o82f41b11e5",
+    "text": "Red light after restart. Escalate to a supervisor."
+   },
+   {
+    "id": "oe618d7cb54",
+    "text": "The customer has not replied for one hour. Close the case."
+   },
+   {
+    "id": "o13aa93ea5b",
+    "text": "The first step fails once. Replace the equipment."
+   }
+  ],
+  "steps": [
+   {
+    "id": "o06655d7c87",
+    "text": "Confirm identity using the approved method."
+   },
+   {
+    "id": "o1121dd1db3",
+    "text": "Obtain the payment reference and payment time."
+   },
+   {
+    "id": "o8199e41ad3",
+    "text": "Check payment status in the payments system."
+   },
+   {
+    "id": "oe3a9101a60",
+    "text": "Compare the result with the payment rules."
+   },
+   {
+    "id": "oe64e737a58",
+    "text": "Activate the plan if payment is confirmed, or send the reference to Finance if no match is found."
+   },
+   {
+    "id": "of68ceee127",
+    "text": "Record the outcome and give the customer the next update time."
+   },
+   {
+    "id": "o0d998984e3",
+    "text": "Check that the router has power and is switched on."
+   },
+   {
+    "id": "oa535a3625f",
+    "text": "Wait for the router to finish starting."
+   },
+   {
+    "id": "o1c4a95e305",
+    "text": "Read the router lights against the guide."
+   },
+   {
+    "id": "o12064e8098",
+    "text": "Restart the router once."
+   },
+   {
+    "id": "o118ca071e5",
+    "text": "Check the cable connections."
+   },
+   {
+    "id": "o459d4c126b",
+    "text": "If the light stays red, book a technician visit."
+   },
+   {
+    "id": "oe967cbbaa1",
+    "text": "Activate the plan before checking the payment."
+   },
+   {
+    "id": "oeb479145cc",
+    "text": "Promise a refund without verifying the payment."
+   },
+   {
+    "id": "o2c5fa8066d",
+    "text": "Ask for the router password."
+   },
+   {
+    "id": "oc7bdff3218",
+    "text": "Tell the customer to replace the router."
+   }
+  ],
+  "leaveOut": [
+   {
+    "id": "o7c3fb51d87",
+    "text": "Customer name"
+   },
+   {
+    "id": "o94e31e81e1",
+    "text": "Phone number"
+   },
+   {
+    "id": "ocdc1f38b11",
+    "text": "Payment reference"
+   },
+   {
+    "id": "o78fb56ab55",
+    "text": "Account number"
+   },
+   {
+    "id": "of17de3b924",
+    "text": "Router light colour"
+   },
+   {
+    "id": "o052b904cbc",
+    "text": "Plan name"
+   },
+   {
+    "id": "o21f732b2ec",
+    "text": "Payment rules"
+   },
+   {
+    "id": "o67deda2751",
+    "text": "Support team name"
+   }
+  ],
+  "tickets": [
+   {
+    "id": "1",
+    "text": "Ticket 1"
+   },
+   {
+    "id": "2",
+    "text": "Ticket 2"
+   },
+   {
+    "id": "3",
+    "text": "Ticket 3"
+   },
+   {
+    "id": "4",
+    "text": "Ticket 4"
+   },
+   {
+    "id": "5",
+    "text": "Ticket 5"
+   },
+   {
+    "id": "6",
+    "text": "Ticket 6"
+   },
+   {
+    "id": "7",
+    "text": "Ticket 7"
+   },
+   {
+    "id": "8",
+    "text": "Ticket 8"
+   },
+   {
+    "id": "9",
+    "text": "Ticket 9"
+   },
+   {
+    "id": "10",
+    "text": "Ticket 10"
+   },
+   {
+    "id": "11",
+    "text": "Ticket 11"
+   },
+   {
+    "id": "12",
+    "text": "Ticket 12"
+   }
+  ]
+ }
+}

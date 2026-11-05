@@ -1,0 +1,528 @@
+{
+ "version": "w8-2026-10-25-v1",
+ "marks": {
+  "ticket": {
+   "requester": 1,
+   "status": 1,
+   "statusAlternate": 0.5,
+   "priority": 1,
+   "priorityOneAway": 0.5,
+   "sla": 0.5,
+   "slaMatchesChosenPriority": 0.25,
+   "tags": 0.5,
+   "tagsOneOff": 0.25,
+   "finding": [
+    0.5,
+    0.25,
+    0,
+    0
+   ],
+   "action": [
+    0.25,
+    0.1,
+    0,
+    0
+   ],
+   "ownerTime": [
+    0.25,
+    0.15,
+    0.1,
+    0
+   ]
+  },
+  "article": {
+   "tickets": 2,
+   "ticketsOneOff": 1,
+   "dropdownFull": 2,
+   "dropdownPart": 1,
+   "stepCorrect": 1,
+   "stepAdjacent": 0.5,
+   "leaveOut": 2,
+   "leaveOutOneError": 1
+  }
+ },
+ "tickets": {
+  "1": {
+   "requester": "C01",
+   "status": "in_progress",
+   "altStatuses": [
+    "waiting_internal"
+   ],
+   "priority": "P3",
+   "team": "billing_payments",
+   "tags": [
+    "payment_not_reflected"
+   ],
+   "sla": "o5c6257e607",
+   "slaPriority": {
+    "o4bdfd1ee78": "P1",
+    "o084bb1c8a6": "P2",
+    "o5c6257e607": "P3",
+    "o10e5dd019d": "P4"
+   },
+   "finding": {
+    "full": "of56920bb78",
+    "part": "o93cc7c0c48"
+   },
+   "action": {
+    "full": "oa68ff559cb",
+    "part": "o4af3dc864d"
+   },
+   "ownerTime": {
+    "full": "o5175d1fdef",
+    "ownerOnly": "o433d86970e",
+    "timeOnly": "of8a91a6bb8",
+    "neither": "o16d609a835"
+   }
+  },
+  "2": {
+   "requester": "C02",
+   "status": "resolved",
+   "altStatuses": [
+    "in_progress"
+   ],
+   "priority": "P3",
+   "team": "customer_support",
+   "tags": [
+    "no_connection",
+    "power_related"
+   ],
+   "sla": "o43475fd649",
+   "slaPriority": {
+    "o384dc55b1a": "P1",
+    "ofab235f8c7": "P2",
+    "o43475fd649": "P3",
+    "o65570cf5bc": "P4"
+   },
+   "finding": {
+    "full": "o0882784d39",
+    "part": "o441ab465a6"
+   },
+   "action": {
+    "full": "ob203f4454f",
+    "part": "obc25719aca"
+   },
+   "ownerTime": {
+    "full": "odfbfd50fb2",
+    "ownerOnly": "o7273b9f47d",
+    "timeOnly": "o90904fd788",
+    "neither": "o9dc27c934b"
+   }
+  },
+  "3": {
+   "requester": "C03",
+   "status": "waiting_internal",
+   "altStatuses": [
+    "in_progress"
+   ],
+   "priority": "P3",
+   "team": "billing_payments",
+   "tags": [
+    "payment_not_reflected"
+   ],
+   "sla": "o47f33cf05d",
+   "slaPriority": {
+    "oe3f2e62bbf": "P1",
+    "o49981ec8dc": "P2",
+    "o47f33cf05d": "P3",
+    "o31078c3b79": "P4"
+   },
+   "finding": {
+    "full": "o64f4575081",
+    "part": "oad5104c17a"
+   },
+   "action": {
+    "full": "oa545b9cba7",
+    "part": "o6b9ebe184a"
+   },
+   "ownerTime": {
+    "full": "of7346a6e85",
+    "ownerOnly": "oa9236199f5",
+    "timeOnly": "ob000b27867",
+    "neither": "oe69be09a1f"
+   }
+  },
+  "4": {
+   "requester": "C04",
+   "status": "waiting_customer",
+   "altStatuses": [
+    "in_progress"
+   ],
+   "priority": "P3",
+   "team": "billing_payments",
+   "tags": [
+    "payment_not_reflected"
+   ],
+   "sla": "o3d38d25bbe",
+   "slaPriority": {
+    "odebcc9c2b0": "P1",
+    "o79ae176a9f": "P2",
+    "o3d38d25bbe": "P3",
+    "o30ed11cc58": "P4"
+   },
+   "finding": {
+    "full": "od1d80d0871",
+    "part": "oac43e6ef86"
+   },
+   "action": {
+    "full": "ob0161c607e",
+    "part": "o6656aa40ef"
+   },
+   "ownerTime": {
+    "full": "o078efd88a3",
+    "ownerOnly": "ofad85d0089",
+    "timeOnly": "oc2968de317",
+    "neither": "of06c9e92a8"
+   }
+  },
+  "5": {
+   "requester": "C05",
+   "status": "in_progress",
+   "altStatuses": [
+    "waiting_customer"
+   ],
+   "priority": "P3",
+   "team": "customer_support",
+   "tags": [
+    "no_connection",
+    "power_related"
+   ],
+   "sla": "o1ef460176d",
+   "slaPriority": {
+    "of322331ab8": "P1",
+    "obd846f4a75": "P2",
+    "o1ef460176d": "P3",
+    "oacaaa64cb9": "P4"
+   },
+   "finding": {
+    "full": "obff307b4d6",
+    "part": "o54a33cad3e"
+   },
+   "action": {
+    "full": "od592febd9a",
+    "part": "o19b9549ec8"
+   },
+   "ownerTime": {
+    "full": "o4f9f39d327",
+    "ownerOnly": "o3ee70128c6",
+    "timeOnly": "oe6a7b85abb",
+    "neither": "obb134f6be4"
+   }
+  },
+  "6": {
+   "requester": "C06",
+   "status": "resolved",
+   "altStatuses": [
+    "in_progress"
+   ],
+   "priority": "P3",
+   "team": "billing_payments",
+   "tags": [
+    "payment_not_reflected"
+   ],
+   "sla": "ofbe778dcb1",
+   "slaPriority": {
+    "o2636f3983a": "P1",
+    "o187d69c234": "P2",
+    "ofbe778dcb1": "P3",
+    "o9a8f40ea02": "P4"
+   },
+   "finding": {
+    "full": "obe68214b91",
+    "part": "o9ff9692e9a"
+   },
+   "action": {
+    "full": "oa601faa7cc",
+    "part": "oa0ca6d2cbd"
+   },
+   "ownerTime": {
+    "full": "o739c37fe73",
+    "ownerOnly": "o87dd9796e0",
+    "timeOnly": "o037dbb71b8",
+    "neither": "o57f8a726f4"
+   }
+  },
+  "7": {
+   "requester": "C07",
+   "status": "waiting_internal",
+   "altStatuses": [
+    "in_progress"
+   ],
+   "priority": "P2",
+   "team": "field_services",
+   "tags": [
+    "no_connection",
+    "power_related",
+    "needs_technician"
+   ],
+   "sla": "od5d3387134",
+   "slaPriority": {
+    "o532b771485": "P1",
+    "od5d3387134": "P2",
+    "o71824a721a": "P3",
+    "o53fff53d90": "P4"
+   },
+   "finding": {
+    "full": "odba0258b99",
+    "part": "o79a80edfd8"
+   },
+   "action": {
+    "full": "o1bda78f401",
+    "part": "odf38915e17"
+   },
+   "ownerTime": {
+    "full": "o2576f30c48",
+    "ownerOnly": "o046868fe8a",
+    "timeOnly": "of2b5917f41",
+    "neither": "o414da3867f"
+   }
+  },
+  "8": {
+   "requester": "C01",
+   "status": "resolved",
+   "altStatuses": [
+    "in_progress"
+   ],
+   "priority": "P4",
+   "team": "customer_support",
+   "tags": [
+    "question"
+   ],
+   "sla": "obf159ea615",
+   "slaPriority": {
+    "od19dc71470": "P1",
+    "odbbadc142a": "P2",
+    "o18e106159a": "P3",
+    "obf159ea615": "P4"
+   },
+   "finding": {
+    "full": "o5d247487df",
+    "part": "oa68d458dac"
+   },
+   "action": {
+    "full": "o589ecb5fc3",
+    "part": "of35200e8ac"
+   },
+   "ownerTime": {
+    "full": "oe98e39e742",
+    "ownerOnly": "oab5311baa4",
+    "timeOnly": "o6cbbbe27a4",
+    "neither": "ob98353d508"
+   }
+  },
+  "9": {
+   "requester": "C08",
+   "status": "new",
+   "altStatuses": [
+    "in_progress"
+   ],
+   "priority": "P4",
+   "team": "service_changes",
+   "tags": [
+    "service_request"
+   ],
+   "sla": "o81a9542aaf",
+   "slaPriority": {
+    "o76ab7838d2": "P1",
+    "o8d95976d31": "P2",
+    "o91e6b765c6": "P3",
+    "o81a9542aaf": "P4"
+   },
+   "finding": {
+    "full": "od7689d99ad",
+    "part": "o8e676b171c"
+   },
+   "action": {
+    "full": "o4bebec7804",
+    "part": "o0ca6ad2726"
+   },
+   "ownerTime": {
+    "full": "o5e55c76842",
+    "ownerOnly": "ob7ff02a746",
+    "timeOnly": "o101938d534",
+    "neither": "oa323c31d0d"
+   }
+  },
+  "10": {
+   "requester": "C09",
+   "status": "in_progress",
+   "altStatuses": [
+    "waiting_internal"
+   ],
+   "priority": "P3",
+   "team": "customer_support",
+   "tags": [
+    "complaint",
+    "slow_speed"
+   ],
+   "sla": "oa9b4b10fa7",
+   "slaPriority": {
+    "o412ca65a97": "P1",
+    "o72e5ea07f6": "P2",
+    "oa9b4b10fa7": "P3",
+    "o22aeedf31e": "P4"
+   },
+   "finding": {
+    "full": "odbec6cc8b8",
+    "part": "odb4a6b8180"
+   },
+   "action": {
+    "full": "o0b679cf0d6",
+    "part": "o1a626178f1"
+   },
+   "ownerTime": {
+    "full": "o6f574452a5",
+    "ownerOnly": "of997346544",
+    "timeOnly": "of10cb61245",
+    "neither": "odd37480bd2"
+   }
+  },
+  "11": {
+   "requester": "C02",
+   "status": "waiting_customer",
+   "altStatuses": [
+    "in_progress"
+   ],
+   "priority": "P4",
+   "team": "customer_support",
+   "tags": [
+    "account_access"
+   ],
+   "sla": "oed52414e60",
+   "slaPriority": {
+    "o26c5d132c2": "P1",
+    "o1c7018d93b": "P2",
+    "oc00eecda8a": "P3",
+    "oed52414e60": "P4"
+   },
+   "finding": {
+    "full": "o562467abb6",
+    "part": "oaf0c8d6d89"
+   },
+   "action": {
+    "full": "o3de1331e54",
+    "part": "o33e66c90bb"
+   },
+   "ownerTime": {
+    "full": "o43894c6d9e",
+    "ownerOnly": "oc608db8182",
+    "timeOnly": "o9707cf51d3",
+    "neither": "o8cbb6e514b"
+   }
+  },
+  "12": {
+   "requester": "C10",
+   "status": "waiting_internal",
+   "altStatuses": [
+    "in_progress"
+   ],
+   "priority": "P1",
+   "team": "network_operations",
+   "tags": [
+    "area_outage"
+   ],
+   "sla": "o5477b3b8de",
+   "slaPriority": {
+    "o5477b3b8de": "P1",
+    "o5c44c1adbe": "P2",
+    "oc9c60b81a6": "P3",
+    "o9de955400a": "P4"
+   },
+   "finding": {
+    "full": "o0dfa8b16f4",
+    "part": "o70fc673e50"
+   },
+   "action": {
+    "full": "of8a383e2f1",
+    "part": "of62e3b8492"
+   },
+   "ownerTime": {
+    "full": "ob271497f5e",
+    "ownerOnly": "o4c00a0e542",
+    "timeOnly": "oc2516a9a2c",
+    "neither": "oaf99cc63f4"
+   }
+  }
+ },
+ "articles": {
+  "patterns": {
+   "A": {
+    "tickets": [
+     1,
+     3,
+     4,
+     6
+    ],
+    "title": {
+     "full": "obb100ef765",
+     "part": "od489bd558b"
+    },
+    "issue": {
+     "full": "o8c7d10a505",
+     "part": "oc5d3f8bedc"
+    },
+    "environment": {
+     "full": "o1ff3ac89b4",
+     "part": "o54dcd14313"
+    },
+    "verification": {
+     "full": "ob549985020",
+     "part": "o724c3fbc9c"
+    },
+    "stop": {
+     "full": "o3e8020667d",
+     "part": "ob63e4db760"
+    },
+    "steps": [
+     "o06655d7c87",
+     "o1121dd1db3",
+     "o8199e41ad3",
+     "oe3a9101a60",
+     "oe64e737a58",
+     "of68ceee127"
+    ]
+   },
+   "B": {
+    "tickets": [
+     2,
+     5,
+     7
+    ],
+    "title": {
+     "full": "oa7a5bd56a7",
+     "part": "o1ece7c00dd"
+    },
+    "issue": {
+     "full": "o029e590917",
+     "part": "o1d179167c9"
+    },
+    "environment": {
+     "full": "oc565757e33",
+     "part": "o059fe019ee"
+    },
+    "verification": {
+     "full": "o60f0269869",
+     "part": "o6d877a91d8"
+    },
+    "stop": {
+     "full": "oa1cde8d4fc",
+     "part": "o82f41b11e5"
+    },
+    "steps": [
+     "o0d998984e3",
+     "oa535a3625f",
+     "o1c4a95e305",
+     "o12064e8098",
+     "o118ca071e5",
+     "o459d4c126b"
+    ]
+   }
+  },
+  "leaveOut": [
+   "o7c3fb51d87",
+   "o94e31e81e1",
+   "ocdc1f38b11",
+   "o78fb56ab55"
+  ]
+ }
+}

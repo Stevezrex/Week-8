@@ -1,0 +1,23 @@
+{
+  "name": "harbourdesk",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "HarbourDesk: Harbourline Broadband support desk practical (Week 8)",
+  "scripts": {
+    "seed": "node scripts/build_seed.mjs",
+    "assets": "node scripts/build_assets.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": { "node": ">=22" },
+  "dependencies": {
+    "@netlify/database": "2.0.1"
+  },
+  "devDependencies": {
+    "@dicebear/collection": "9.4.2",
+    "@dicebear/core": "9.4.2",
+    "@fontsource-variable/bricolage-grotesque": "5.3.0",
+    "@fontsource-variable/plus-jakarta-sans": "5.3.0",
+    "lucide-static": "1.61.0"
+  }
+}
