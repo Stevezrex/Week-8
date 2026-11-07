@@ -8,7 +8,7 @@ const LEARNER_MAX_AGE = 14 * 24 * 3600;
 const ASSESSOR_MAX_AGE = 8 * 3600;
 
 function secret() {
-  const s = process.env.SESSION_SECRET;
+  const s = Netlify.env.get('SESSION_SECRET');
   if (!s || s.length < 32) throw Object.assign(new Error('SESSION_SECRET is not set'), { status: 500 });
   return s;
 }
@@ -92,7 +92,7 @@ const WINDOW_MS = 15 * 60 * 1000;
 const MAX_FAILURES = 5;
 
 function passcodeMatches(given) {
-  const real = process.env.ASSESSOR_PASSCODE || '';
+  const real = Netlify.env.get('ASSESSOR_PASSCODE') || '';
   const a = createHash('sha256').update(String(given ?? '')).digest();
   const b = createHash('sha256').update(real).digest();
   return real.length >= 16 && timingSafeEqual(a, b);
@@ -100,7 +100,7 @@ function passcodeMatches(given) {
 
 // Returns true when the passcode is right. Throws 429 when locked, 401 when wrong, 503 when unset.
 export async function assessorSignIn(passcode) {
-  if ((process.env.ASSESSOR_PASSCODE || '').length < 16) {
+  if ((Netlify.env.get('ASSESSOR_PASSCODE') || '').length < 16) {
     throw Object.assign(new Error('assessor_not_configured'), { status: 503 });
   }
   await query(`INSERT INTO assessor_throttle (id) VALUES (1) ON CONFLICT (id) DO NOTHING`);
