@@ -300,7 +300,7 @@ async function deliverToForms({ attempt, marked, work }, opts) {
   let ok = false;
   let detail = '';
   try {
-    const origin = opts.origin || process.env.URL;
+    const origin = opts.origin || Netlify.env.get('URL');
     if (!origin) throw new Error('no site URL');
     const learner = await one(`SELECT display_name FROM learners WHERE id = $1`, [attempt.learner_id]);
     const mail = await one(`SELECT email FROM learner_emails WHERE learner_id = $1 ORDER BY last_seen DESC LIMIT 1`, [attempt.learner_id]);
