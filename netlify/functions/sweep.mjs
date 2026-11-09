@@ -1,4 +1,4 @@
-// Runs hourly. Submits shifts that passed their deadline and had no further requests.
+// Runs daily. Submits shifts that passed their deadline and had no further requests.
 import { sweepExpired } from './lib/attempts.mjs';
 
 export default async function handler() {
@@ -7,4 +7,4 @@ export default async function handler() {
   return new Response(JSON.stringify(result), { headers: { 'content-type': 'application/json' } });
 }
 
-export const config = { schedule: '@hourly' };
+export const config = { schedule: '@daily' };
