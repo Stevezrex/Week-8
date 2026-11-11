@@ -88,6 +88,18 @@ let failures = 0;
 const localKey = () => `${store.learner.id}:${store.active.attemptId}`;
 const clone = (o) => JSON.parse(JSON.stringify(o));
 
+// Reapply only locally dirty records over a newer server snapshot. This keeps local
+// unsynced answers while retaining unrelated work saved by another tab/device.
+function overlayDirtyWork(target, source, keys) {
+  for (const key of keys) {
+    const [kind, n] = key.split(':');
+    const section = kind === 't' ? 'tickets' : kind === 'a' ? 'articles' : null;
+    if (!section || !Object.hasOwn(source?.[section] || {}, n)) continue;
+    target[section][n] = clone(source[section][n]);
+  }
+  return target;
+}
+
 function persist() {
   if (!store.active) return Promise.resolve();
   return idbPut(WORK, localKey(), { revision: store.active.revision, work: store.work, dirty: [...dirty.keys()], at: Date.now() });
@@ -111,12 +123,22 @@ export async function hydrate(state) {
   store.work = { tickets: a.work.tickets || {}, articles: a.work.articles || {} };
 
   const local = await idbGet(WORK, localKey());
-  if (local && local.revision === a.revision && local.dirty?.length) {
-    // Unsynced changes at the same revision: keep them and sync first.
-    store.work = local.work;
-    for (const k of local.dirty) dirty.set(k, ++version);
-    setSaveState('device');
-    scheduleSync(0);
+  if (local?.dirty?.length && local.work) {
+    // Recover unsynced edits even if another device advanced the server revision.
+    // The local dirty records are replayed on top of current server work and saved
+    // against the server's latest revision by the normal optimistic sync flow.
+    overlayDirtyWork(store.work, local.work, local.dirty);
+    for (const k of local.dirty) {
+      if (/^[ta]:(?:[1-9]|1[0-2])$/.test(k) || k === 'a:1' || k === 'a:2') dirty.set(k, ++version);
+    }
+    if (dirty.size) {
+      setSaveState('device');
+      await persist();
+      scheduleSync(0);
+    } else {
+      setSaveState('saved');
+      await persist();
+    }
   } else {
     setSaveState('saved');
     await persist();
@@ -215,20 +237,25 @@ export async function sync() {
       if (dirty.size) { setSaveState('device'); scheduleSync(0); } else setSaveState('saved');
     } catch (err) {
       if (err instanceof ApiError && err.status === 409) {
-        // Another device saved first. The server copy wins.
+        // Refresh from the newer server revision, but do not discard locally dirty
+        // answers. Replay those records through the regular save path instead.
         store.active.revision = err.data.revision;
-        store.work = { tickets: err.data.work.tickets || {}, articles: err.data.work.articles || {} };
-        dirty.clear();
+        const serverWork = {
+          tickets: err.data.work?.tickets || {},
+          articles: err.data.work?.articles || {}
+        };
+        store.work = overlayDirtyWork(serverWork, store.work, dirty.keys());
         await persist();
-        setSaveState('saved');
+        failures = 0;
+        setSaveState('device');
         emit('work');
-        handlers.onReplaced();
+        scheduleSync(0);
       } else if (err instanceof ApiError && err.status === 401) {
         handlers.onEnded(null);
       } else if (err instanceof ApiError && err.status === 400) {
-        // The server refused these values. Drop the unsent copy so the screen matches the saved version.
-        dirty.clear();
-        setSaveState('saved');
+        // Keep rejected local work for recovery; do not silently discard student answers.
+        await persist();
+        setSaveState('offline');
         handlers.onReplaced('error');
       } else {
         setSaveState('offline');
