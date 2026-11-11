@@ -39,7 +39,7 @@ export function startTimer(deadlineAt, { onTick, onWarn, onExpire }) {
     onTick(Math.max(0, remaining), level);
     if (remaining <= 0 && !expired) { expired = true; stop(); onExpire(); }
   }
-  const id = setInterval(tick, 250);
+  const id = setInterval(tick, 1000);
   const stop = () => clearInterval(id);
   tick();
   return stop;

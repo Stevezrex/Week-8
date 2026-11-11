@@ -75,36 +75,96 @@ export async function requestLogout() {
 
 async function closeout(reason) {
   if (closing || !store.active) return;
+
   closing = true;
   const attemptId = store.active.attemptId;
+
   for (;;) {
-    await flush(reason === 'deadline' ? 3000 : 4000);
+    const synced = await flush(8000);
+
+    if (!synced) {
+      closing = false;
+
+      if (store.active) {
+        toast(
+          'Your latest answers have not reached the server. Reconnect and try again. Keep this tab open.',
+          {
+            kind: 'w5',
+            ic: 'triangle-alert',
+            timeout: 0
+          }
+        );
+      }
+
+      return;
+    }
+
     try {
       const res = await api.submit(attemptId, reason);
+
       closing = false;
       await endShift(res.closeout);
       return;
+
     } catch (err) {
-      if (err instanceof ApiError && err.status === 401) { closing = false; await endShift(null); return; }
-      toast('HarbourDesk could not complete that request. Your local work is saved and will sync when the connection returns.', { kind: 'w5', ic: 'triangle-alert', timeout: 8000 });
-      if (reason !== 'deadline') { closing = false; return; }
-      await new Promise((r) => setTimeout(r, 3000));
+      if (err instanceof ApiError && err.status === 401) {
+        closing = false;
+        await endShift(null);
+        return;
+      }
+
+      toast(
+        'Submission could not be completed. Your saved work remains on this device.',
+        {
+          kind: 'w5',
+          ic: 'triangle-alert',
+          timeout: 8000
+        }
+      );
+
+      if (reason !== 'deadline') {
+        closing = false;
+        return;
+      }
+
+      await new Promise(resolve => setTimeout(resolve, 3000));
     }
   }
 }
 
-async function endShift(closeoutInfo) {
+async function endShift(
+  closeoutInfo,
+  { preserveRecord = false } = {}
+) {
   stopTimer?.();
   stopTimer = null;
-  await clearLocal();
+
+  await clearLocal({ preserveRecord });
+
   serverState = null;
   unmountShell();
-  if (!closeoutInfo) { navigate('#/start'); return; }
+
+  if (preserveRecord) {
+    toast(
+      'Some answers could not be uploaded. A local copy has been retained in this browser. Contact your instructor before clearing browser data.',
+      {
+        kind: 'w5',
+        ic: 'triangle-alert',
+        timeout: 0
+      }
+    );
+  }
+
+  if (!closeoutInfo) {
+    navigate('#/start');
+    return;
+  }
+
   navigate(`#/shift-ended?left=${closeoutInfo.attemptsRemaining}`);
 }
 
 setHandlers({
-  onEnded: (c) => endShift(c),
+  onEnded: (c, options) => endShift(c, options),
   onReplaced: (kind) => {
     toast(kind === 'error'
       ? 'HarbourDesk could not complete that request. Your local work is saved and will sync when the connection returns.'
@@ -165,7 +225,16 @@ function mountShell() {
   const scrim = h('div', { class: 'rail-scrim', onclick: () => closeRail() });
 
   const crumbs = h('nav', { class: 'crumbs', 'aria-label': 'Breadcrumb' });
-  const pill = h('span', { class: 'pill pill-normal', 'data-role': 'pill' });
+  const pillIconEl = icon('clock');
+  const pillUseEl = pillIconEl.querySelector('use');
+  const pillTextNode = document.createTextNode('');
+  let currentPillIcon = 'clock';
+  const pill = h(
+    'span',
+    { class: 'pill pill-normal', 'data-role': 'pill' },
+    pillIconEl,
+    pillTextNode
+  );
   const save = h('span', { class: 'savestat', 'data-role': 'save' });
   const topbar = h('header', { class: 'topbar' },
     h('button', { type: 'button', class: 'btn btn-quiet menu-btn', 'aria-label': 'Open menu', 'aria-controls': 'rail', onclick: () => openRail() }, icon('menu', 'icon-24')),
@@ -199,7 +268,19 @@ function mountShell() {
     onTick: (remaining, level) => {
       if (!shell) return;
       shell.pill.className = `pill pill-${level}`;
-      shell.pill.replaceChildren(icon(pillIcon(level)), pillText(remaining));
+
+      const nextIcon = pillIcon(level);
+
+      if (nextIcon !== currentPillIcon) {
+        pillUseEl?.setAttribute(
+          'href',
+          `/img/icons.svg#i-${nextIcon}`
+        );
+
+        currentPillIcon = nextIcon;
+      }
+
+      pillTextNode.nodeValue = pillText(remaining);
     },
     onWarn: (w) => {
       toast(w.text, { kind: w.kind, ic: w.ic, timeout: w.level === 'w5' ? 0 : 10000 });
