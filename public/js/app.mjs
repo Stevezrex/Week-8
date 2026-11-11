@@ -165,7 +165,16 @@ function mountShell() {
   const scrim = h('div', { class: 'rail-scrim', onclick: () => closeRail() });
 
   const crumbs = h('nav', { class: 'crumbs', 'aria-label': 'Breadcrumb' });
-  const pill = h('span', { class: 'pill pill-normal', 'data-role': 'pill' });
+  const pillIconEl = icon('clock');
+  const pillUseEl = pillIconEl.querySelector('use');
+  const pillTextNode = document.createTextNode('');
+  let currentPillIcon = 'clock';
+  const pill = h(
+    'span',
+    { class: 'pill pill-normal', 'data-role': 'pill' },
+    pillIconEl,
+    pillTextNode
+  );
   const save = h('span', { class: 'savestat', 'data-role': 'save' });
   const topbar = h('header', { class: 'topbar' },
     h('button', { type: 'button', class: 'btn btn-quiet menu-btn', 'aria-label': 'Open menu', 'aria-controls': 'rail', onclick: () => openRail() }, icon('menu', 'icon-24')),
@@ -199,7 +208,19 @@ function mountShell() {
     onTick: (remaining, level) => {
       if (!shell) return;
       shell.pill.className = `pill pill-${level}`;
-      shell.pill.replaceChildren(icon(pillIcon(level)), pillText(remaining));
+
+      const nextIcon = pillIcon(level);
+
+      if (nextIcon !== currentPillIcon) {
+        pillUseEl?.setAttribute(
+          'href',
+          `/img/icons.svg#i-${nextIcon}`
+        );
+
+        currentPillIcon = nextIcon;
+      }
+
+      pillTextNode.nodeValue = pillText(remaining);
     },
     onWarn: (w) => {
       toast(w.text, { kind: w.kind, ic: w.ic, timeout: w.level === 'w5' ? 0 : 10000 });
