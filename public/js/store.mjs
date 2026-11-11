@@ -146,9 +146,17 @@ export async function hydrate(state) {
   emit('state');
 }
 
-export async function clearLocal() {
+export async function clearLocal({ preserveRecord = false } = {}) {
   clearTimeout(timer);
-  if (store.learner && store.active) await idbDelete(WORK, localKey());
+
+  if (store.learner && store.active) {
+    if (preserveRecord && dirty.size > 0) {
+      await persist();
+    } else {
+      await idbDelete(WORK, localKey());
+    }
+  }
+
   dirty.clear();
   store.active = null;
   store.work = { tickets: {}, articles: {} };
@@ -229,7 +237,14 @@ export async function sync() {
     setSaveState('syncing');
     try {
       const res = await api.save(store.active.attemptId, store.active.revision, changes);
-      if (res.ended) { handlers.onEnded(res.closeout); return; }
+      if (res.ended) {
+        const preserveRecord = dirty.size > 0;
+
+        if (preserveRecord) await persist();
+
+        await handlers.onEnded(res.closeout, { preserveRecord });
+        return;
+      }
       failures = 0;
       store.active.revision = res.revision;
       for (const [k, v] of sent) if (dirty.get(k) === v) dirty.delete(k);
@@ -251,7 +266,11 @@ export async function sync() {
         emit('work');
         scheduleSync(0);
       } else if (err instanceof ApiError && err.status === 401) {
-        handlers.onEnded(null);
+        const preserveRecord = dirty.size > 0;
+
+        if (preserveRecord) await persist();
+
+        await handlers.onEnded(null, { preserveRecord });
       } else if (err instanceof ApiError && err.status === 400) {
         // Keep rejected local work for recovery; do not silently discard student answers.
         await persist();
@@ -271,11 +290,21 @@ export async function sync() {
 // Finish pending sync before closeout. Gives up after a short wait if the connection is down.
 export async function flush(maxMs = 4000) {
   clearTimeout(timer);
+
   const end = Date.now() + maxMs;
-  while (dirty.size && Date.now() < end && store.active) {
+
+  while (dirty.size > 0 && store.active && Date.now() < end) {
     await sync();
+
     if (store.saveState === 'offline') break;
   }
+
+  return Boolean(
+    store.active &&
+    dirty.size === 0 &&
+    !inflight &&
+    store.saveState === 'saved'
+  );
 }
 
 export function onLeave() {
